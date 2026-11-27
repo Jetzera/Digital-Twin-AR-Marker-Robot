@@ -12,7 +12,7 @@ A prototype Digital Twin control system for a two-wheeled differential-drive mob
 2. **Digital Twin Synchronization:** Extracted coordinates and orientation angles are streamed into Unity 3D to mirror the physical robot's state frame-by-frame.
 3. **AI Policy Inference:** A neural network trained via Proximal Policy Optimization (PPO) in Unity ML-Agents observes the robot's state and outputs discrete navigation commands.
 4. **Wireless Actuation:** Control commands are transmitted over Wi-Fi via **UDP** to an **M5AtomS3 (ESP32)** microcontroller driving dual DC motors through an **L298NX2** H-bridge driver.
-<img width="640" height="477" alt="Screenshot 2026-07-02 145341" src="https://github.com/user-attachments/assets/aeed7da6-d155-4865-9296-401935239f2d" />
+<p align="center"><img width="640" height="477" alt="Screenshot 2026-07-02 145341" src="https://github.com/user-attachments/assets/aeed7da6-d155-4865-9296-401935239f2d" /></p>
 
 
 
@@ -58,9 +58,9 @@ A prototype Digital Twin control system for a two-wheeled differential-drive mob
 * **Simulation Performance:** The PPO agent successfully converged within `1,000,000` training steps (achieving a cumulative reward plateau of `~0.85` on TensorBoard) and navigated reliably to randomized targets in Unity.
 * **Real-World Deployment Insights:** Physical testing revealed **Sim-to-Real transfer discrepancies**—specifically target overshoot/oscillation and low-speed stalling—caused by surface friction variance, end-to-end camera/network latency, and DC motor deadzones.
 * **Future Direction:** Implementing **Domain & Dynamics Randomization** (randomizing mass, friction, and latency during training) alongside **PWM Deadzone Compensation** to bridge the Sim-to-Real gap.
-!<img width="572" height="528" alt="Screenshot 2026-07-23 143403" src="https://github.com/user-attachments/assets/21aafe83-9e9f-4e14-8776-b1d4d900ecd0" />
+<p align="center"><img width="572" height="528" alt="Screenshot 2026-07-23 143403" src="https://github.com/user-attachments/assets/21aafe83-9e9f-4e14-8776-b1d4d900ecd0" /></p>
 <br>
-!<img width="240" height="426" alt="ezgif-4ef0a96b902718b7" src="https://github.com/user-attachments/assets/32a330e3-c29f-4f90-bc7e-6f0c49845e89" />
+<p align="center"><img width="240" height="426" alt="ezgif-4ef0a96b902718b7" src="https://github.com/user-attachments/assets/32a330e3-c29f-4f90-bc7e-6f0c49845e89" /></p>
 
 
 
