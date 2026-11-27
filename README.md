@@ -1,8 +1,8 @@
-# Digital Twin Robot Control using AR Markers
+# Digital Twin Robot Control System using AprilTag, Unity ML-Agents, and ESP32 via UDP
 
 A prototype Digital Twin control system for a two-wheeled differential-drive mobile robot, integrating **6-DoF AprilTag visual localization**, **Unity 3D simulation**, **Reinforcement Learning (Unity ML-Agents / PPO)**, and **low-latency Wi-Fi UDP communication** on an **ESP32 (M5AtomS3)** microcontroller.
 
-> **Research Affiliation:** Developed during a 4-month undergraduate research exchange at the **Co-creative Robotics Laboratory**, Institute of Technologists (Saitama, Japan), under the supervision of **Assoc. Prof. Dr. Hosoai Shintaro** (April – July 2026).
+> **Research Affiliation:** Developed during a 4-month undergraduate research exchange at the **Co-creative Robotics Laboratory**, Institute of Technologists (ものつくり大学) Saitama Japan, under the supervision of **Assoc. Prof. Dr. Hosoai Shintaro** (April – July 2026).
 
 ---
 
@@ -10,8 +10,11 @@ A prototype Digital Twin control system for a two-wheeled differential-drive mob
 
 1. **Physical State Extraction:** An overhead webcam tracks `Tag36h11` AprilTag fiducial markers mounted on the physical robot and target location to compute 3D pose coordinates in real time.
 2. **Digital Twin Synchronization:** Extracted coordinates and orientation angles are streamed into Unity 3D to mirror the physical robot's state frame-by-frame.
-3. **AI Policy Inference:** A neural network trained via Proximal Policy Optimization (PPO) in Unity ML-Agents observes the robot's state and outputs discrete navigation commands (`0: Stop`, `1: Forward`, `2: Turn Left`, `3: Turn Right`).
+3. **AI Policy Inference:** A neural network trained via Proximal Policy Optimization (PPO) in Unity ML-Agents observes the robot's state and outputs discrete navigation commands.
 4. **Wireless Actuation:** Control commands are transmitted over Wi-Fi via **UDP** to an **M5AtomS3 (ESP32)** microcontroller driving dual DC motors through an **L298NX2** H-bridge driver.
+<img width="640" height="477" alt="Screenshot 2026-07-02 145341" src="https://github.com/user-attachments/assets/aeed7da6-d155-4865-9296-401935239f2d" />
+
+
 
 ---
 
@@ -42,11 +45,11 @@ A prototype Digital Twin control system for a two-wheeled differential-drive mob
 * `ESP32_Firmware/`
   * `NewUDP.ino`: Arduino/C++ firmware for M5AtomS3 receiving UDP packets with a 5-second safety timeout.
 * `Config/`
-  * `RobotDrive.yaml`: PPO hyperparameter configuration (`learning_rate: 0.0003`, `batch_size: 512`, `hidden_units: 128`, `num_layers: 2`, `max_steps: 1,000,000`).
+  * `RobotDrive.yaml`: PPO hyperparameter configuration.
 * `Model/`
   * `RobotDrive.onnx`: Exported ONNX neural network policy trained in Unity ML-Agents.
 * `Docs/`
-  * `Presentation_JP.pdf`: Research presentation slides in Japanese (13 pages).
+  * `Presentation_JP.pdf`: Research presentation slides in Japanese.
 
 ---
 
@@ -55,3 +58,8 @@ A prototype Digital Twin control system for a two-wheeled differential-drive mob
 * **Simulation Performance:** The PPO agent successfully converged within `1,000,000` training steps (achieving a cumulative reward plateau of `~0.85` on TensorBoard) and navigated reliably to randomized targets in Unity.
 * **Real-World Deployment Insights:** Physical testing revealed **Sim-to-Real transfer discrepancies**—specifically target overshoot/oscillation and low-speed stalling—caused by surface friction variance, end-to-end camera/network latency, and DC motor deadzones.
 * **Future Direction:** Implementing **Domain & Dynamics Randomization** (randomizing mass, friction, and latency during training) alongside **PWM Deadzone Compensation** to bridge the Sim-to-Real gap.
+<img width="572" height="528" alt="Screenshot 2026-07-23 143403" src="https://github.com/user-attachments/assets/21aafe83-9e9f-4e14-8776-b1d4d900ecd0" />
+<img width="240" height="426" alt="ezgif-4ef0a96b902718b7" src="https://github.com/user-attachments/assets/32a330e3-c29f-4f90-bc7e-6f0c49845e89" />
+
+
+
