@@ -58,8 +58,9 @@ A prototype Digital Twin control system for a two-wheeled differential-drive mob
 * **Simulation Performance:** The PPO agent successfully converged within `1,000,000` training steps (achieving a cumulative reward plateau of `~0.85` on TensorBoard) and navigated reliably to randomized targets in Unity.
 * **Real-World Deployment Insights:** Physical testing revealed **Sim-to-Real transfer discrepancies**—specifically target overshoot/oscillation and low-speed stalling—caused by surface friction variance, end-to-end camera/network latency, and DC motor deadzones.
 * **Future Direction:** Implementing **Domain & Dynamics Randomization** (randomizing mass, friction, and latency during training) alongside **PWM Deadzone Compensation** to bridge the Sim-to-Real gap.
-<img width="572" height="528" alt="Screenshot 2026-07-23 143403" src="https://github.com/user-attachments/assets/21aafe83-9e9f-4e14-8776-b1d4d900ecd0" />
-<img width="240" height="426" alt="ezgif-4ef0a96b902718b7" src="https://github.com/user-attachments/assets/32a330e3-c29f-4f90-bc7e-6f0c49845e89" />
+!<img width="572" height="528" alt="Screenshot 2026-07-23 143403" src="https://github.com/user-attachments/assets/21aafe83-9e9f-4e14-8776-b1d4d900ecd0" />
+<br>
+!<img width="240" height="426" alt="ezgif-4ef0a96b902718b7" src="https://github.com/user-attachments/assets/32a330e3-c29f-4f90-bc7e-6f0c49845e89" />
 
 
 
