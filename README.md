@@ -45,7 +45,7 @@ A prototype Digital Twin control system for a differential-drive mobile robot, i
 * `ESP32_Firmware/`
   * `NewUDP.ino`: Arduino/C++ firmware for M5AtomS3 receiving UDP packets with a 5-second safety timeout.
 * `Config/`
-  * `RobotDrive.yaml`: PPO hyperparameter configuration.
+  * `So.yaml`: PPO hyperparameter configuration.
 * `Model/`
   * `RobotDrive.onnx`: Exported ONNX neural network policy trained in Unity ML-Agents.
 * `Docs/`
