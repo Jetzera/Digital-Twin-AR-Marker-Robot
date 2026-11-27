@@ -1,6 +1,6 @@
 # Digital Twin Robot Control System using AprilTag, Unity ML-Agents, and ESP32 via UDP
 
-A prototype Digital Twin control system for a two-wheeled differential-drive mobile robot, integrating **6-DoF AprilTag visual localization**, **Unity 3D simulation**, **Reinforcement Learning (Unity ML-Agents / PPO)**, and **low-latency Wi-Fi UDP communication** on an **ESP32 (M5AtomS3)** microcontroller.
+A prototype Digital Twin control system for a differential-drive mobile robot, integrating **real-time AprilTag visual localization**, **Unity 3D simulation**, **Reinforcement Learning (Unity ML-Agents / PPO)**, and **low-latency Wi-Fi UDP communication** on an **ESP32 (M5AtomS3)** microcontroller.
 
 > **Research Affiliation:** Developed during a 4-month undergraduate research exchange at the **Co-creative Robotics Laboratory**, Institute of Technologists (ものつくり大学) Saitama Japan, under the supervision of **Assoc. Prof. Dr. Hosoai Shintaro** (April – July 2026).
 
@@ -39,7 +39,7 @@ A prototype Digital Twin control system for a two-wheeled differential-drive mob
 * `Unity_Scripts/`
   * `SoAgent.cs`: Reinforcement Learning training environment and reward shaping in Unity simulation.
   * `NuSoAgent.cs`: Deployment agent script synchronizing real-world AprilTag poses and sending UDP actions.
-  * `DetectionTest.cs`: Real-time webcam capture and AprilTag 6-DoF pose estimation.
+  * `DetectionTest.cs`: Real-time webcam capture and AprilTag planar pose estimation.
   * `RobotUDPSender.cs`: Low-latency UDP socket client transmitting discrete action IDs.
   * `GuiRobotAgent.cs`: On-screen UI overlay displaying real-time `Step` count and `Cumulative Reward`.
 * `ESP32_Firmware/`
